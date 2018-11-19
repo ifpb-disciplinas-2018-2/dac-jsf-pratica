@@ -20,8 +20,8 @@ public class BandaImplementationDao implements BandaInterface{
     }
 
     @Override
-    public boolean excluir(Banda banda) {
-        dao.removeIf(b -> banda.getId() == b.getId());
+    public boolean excluir(int id) {
+        dao.removeIf(b -> id == b.getId());
         return true;
     }
 

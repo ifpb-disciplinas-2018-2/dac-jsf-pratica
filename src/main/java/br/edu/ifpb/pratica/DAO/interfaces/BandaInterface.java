@@ -10,7 +10,7 @@ import java.util.List;
 public interface BandaInterface {
     
     boolean salvar (Banda banda);
-    boolean excluir (Banda banda);
+    boolean excluir (int id);
     boolean atualizar (Banda banda);
     List<Banda> listarBandas ();
 }

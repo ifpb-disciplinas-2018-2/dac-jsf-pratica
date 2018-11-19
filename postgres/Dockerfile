@@ -1,7 +1,7 @@
 FROM postgres
-ENV POSTGRES_DB clientes
-ENV POSTGRES_USER job
-ENV POSTGRES_PASSWORD 123
+ENV POSTGRES_DB dac
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD postgres
 
 COPY create.sql /docker-entrypoint-initdb.d/
 COPY insert.sql /docker-entrypoint-initdb.d/

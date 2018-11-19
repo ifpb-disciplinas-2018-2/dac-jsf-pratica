@@ -7,6 +7,7 @@
         <title>Facelet Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="css/bulma.css"/>
+        <link rel="stylesheet" href="css/bulma-divider.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
         <link rel="stylesheet" href="css/style.css"/>
     </h:head>
@@ -19,20 +20,17 @@
                         <div class="column"></div>
                         <div class="column is-3 has-vertically-aligned-content">
                             <p>
-                                <a href="#modal-cadastrar-banda" class="button button is-primary is-inverted is-outlined is-medium" rel="modal:open">Cadastrar Banda</a>
+                                <a href="#modal-cadastrar-banda" class="button button is-primary is-inverted is-outlined is-medium m-1" rel="modal:open">Cadastrar Banda</a>
                             </p>
-
-                        </div>
-                        <div class="column is-3 has-vertically-aligned-content">
+                            <br/>
                             <p>
                                 <a href="#modal-cadastrar-integrante" class=" button is-primary is-inverted is-outlined is-medium" rel="modal:open">Cadastrar Integrantes</a>
                             </p>
                         </div>
-
                         <div class="is-divider-vertical" data-content="OR"></div>
                         <div class="column is-3 has-vertically-aligned-content">
                             <p>
-                                <a class="button is-primary is-inverted is-outlined is-medium" href="front?action=Home">Entrar</a>
+                                <a class="button is-primary is-inverted is-outlined is-medium" href="home.xhtml">Entrar</a>
                             </p> 
                         </div>
                         <div class="column"></div>
@@ -41,22 +39,12 @@
             </div>  
         </section>
         <div class="header">
-            <ui:insert name="header">
-                <ui:include src="cadastroBanda.xhtml"></ui:include>
-               
-            </ui:insert>
-
-            <ui:insert name="header">
-                <ui:include src="cadastroIntegrantes.xhtml"></ui:include>
-                
-            </ui:insert>
+            <ui:include src="cadastroBanda.xhtml"></ui:include>
+            <ui:include src="cadastroIntegrantes.xhtml"></ui:include>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-      
-
     </h:body>
 </html>
 

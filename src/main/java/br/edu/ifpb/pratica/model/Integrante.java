@@ -15,6 +15,10 @@ public class Integrante {
     private LocalDate dataDeNascimento;
     private CPF cpf = new CPF("");
 
+    public Integrante() {
+    }
+    
+
     public Integrante(int id, String nome, LocalDate dataDeNascimento) {
         this.id = id;
         this.nome = nome;

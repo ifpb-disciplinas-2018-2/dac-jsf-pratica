@@ -6,9 +6,9 @@ package br.edu.ifpb.pratica.DAO.connect;
  */
 public class DataBase {
     
-    private String url = "jdbc:postgresql://127.0.0.1:5432/database";
-    private String user = "user";
-    private String  password = "pass";
+    private String url = "jdbc:postgresql://127.0.0.1:5432/clientes";
+    private String user = "job";
+    private String  password = "123";
     private String classForName = "org.postgresql.Driver";
 
     public DataBase() {

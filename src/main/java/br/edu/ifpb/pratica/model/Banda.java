@@ -14,8 +14,11 @@ public class Banda {
     private int id;
     private String nomeFantasia;
     private String localOrigem;
-    private List<Integrante> integrantes;;
+    private List<Integrante> integrantes;
 
+    public Banda() {
+    }
+    
     public Banda(int id, String nomeFantasia, String localOrigem, List<Integrante> integrantes) {
         this.id = id;
         this.nomeFantasia = nomeFantasia;

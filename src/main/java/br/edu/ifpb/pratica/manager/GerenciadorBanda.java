@@ -29,8 +29,8 @@ public class GerenciadorBanda {
          return bandaDao.salvar(banda);
      }
      
-     public boolean  excluirBanda(Banda banda) {
-         return bandaDao.excluir(banda);
+     public boolean  excluirBanda(int id) {
+         return bandaDao.excluir(id);
      }
      
      public boolean atualizarBanda (Banda banda) {

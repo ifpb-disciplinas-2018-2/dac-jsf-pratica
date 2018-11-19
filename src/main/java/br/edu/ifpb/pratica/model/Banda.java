@@ -1,7 +1,6 @@
 package br.edu.ifpb.pratica.model;
 
 
-import java.util.List;
 import java.util.Objects;
 
 
@@ -14,16 +13,14 @@ public class Banda {
     private int id;
     private String nomeFantasia;
     private String localOrigem;
-    private List<Integrante> integrantes;
 
     public Banda() {
     }
     
-    public Banda(int id, String nomeFantasia, String localOrigem, List<Integrante> integrantes) {
+    public Banda(int id, String nomeFantasia, String localOrigem) {
         this.id = id;
         this.nomeFantasia = nomeFantasia;
         this.localOrigem = localOrigem;
-        this.integrantes = integrantes;
     }
 
     public int getId() {
@@ -50,17 +47,12 @@ public class Banda {
         this.localOrigem = localOrigem;
     }
 
-    public List<Integrante> getIntegrantes() {
-        return integrantes;
-    }
-
-    public void setIntegrantes(List<Integrante> integrantes) {
-        this.integrantes = integrantes;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
+        hash = 37 * hash + this.id;
+        hash = 37 * hash + Objects.hashCode(this.nomeFantasia);
+        hash = 37 * hash + Objects.hashCode(this.localOrigem);
         return hash;
     }
 
@@ -85,18 +77,12 @@ public class Banda {
         if (!Objects.equals(this.localOrigem, other.localOrigem)) {
             return false;
         }
-        if (!Objects.equals(this.integrantes, other.integrantes)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Banda{" + "id=" + id + ", nomeFantasia=" + nomeFantasia + ", localOrigem=" + localOrigem + ", integrantes=" + integrantes + '}';
-    }
-
-    
-    
-        
+        return "Banda{" + "id=" + id + ", nomeFantasia=" + nomeFantasia + ", "
+                + "localOrigem=" + localOrigem + '}';
+    }      
 }

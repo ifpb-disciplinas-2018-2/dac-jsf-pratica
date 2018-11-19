@@ -30,14 +30,14 @@ public class GerenciadorBanda {
      }
      
      public boolean  excluirBanda(Banda banda) {
-         return bandaDao.excluir(banda);
+         return bandaDao.excluir(banda.getId());
      }
      
      public boolean atualizarBanda (Banda banda) {
          return bandaDao.atualizar(banda);
      }
      
-     public List<Banda> salvarBanda () {
+     public List<Banda> listarBandas () {
          return bandaDao.listarBandas();
      }
      

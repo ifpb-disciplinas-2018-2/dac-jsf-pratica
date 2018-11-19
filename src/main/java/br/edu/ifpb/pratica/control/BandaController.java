@@ -31,14 +31,16 @@ public class BandaController {
     }
     
     public List<Banda> listar(){
-        return null;
+        return this.gerenciador.listarBandas();      
     }
     
     public String salvar(){
+        this.gerenciador.salvarBanda(this.banda);
         return null;
     }
     
     public String atualizar(){
+        this.gerenciador.atualizarBanda(this.banda);
         return null;
     }
     

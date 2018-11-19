@@ -1,5 +1,7 @@
 package br.edu.ifpb.pratica.DAO.implementations;
 
+import br.edu.ifpb.pratica.DAO.connect.ConFactory;
+import br.edu.ifpb.pratica.DAO.connect.DataBase;
 import br.edu.ifpb.pratica.DAO.interfaces.BandaInterface;
 import br.edu.ifpb.pratica.model.Banda;
 import java.sql.Connection;
@@ -16,8 +18,16 @@ import java.util.List;
  */
 public class BandaImplementationDAOBanco implements BandaInterface{
     
-    //private Connection connection = new ConnFactory();
+    private DataBase postgres;
+    private Connection connection;
 
+    public BandaImplementationDAOBanco(DataBase postgres, Connection connection) 
+            throws ClassNotFoundException, SQLException {
+        this.postgres = new DataBase();
+        this.connection = ConFactory.getConnection(postgres.getUrl(), 
+                postgres.getUser(), postgres.getPassword(), postgres.getClassForName());
+    }
+    
     @Override
     public boolean salvar(Banda banda) {
         try {
@@ -27,20 +37,44 @@ public class BandaImplementationDAOBanco implements BandaInterface{
             createStatement.setString(1, banda.getLocalOrigem());
             createStatement.setString(2, banda.getNomeFantasia());
             createStatement.executeUpdate();
+            createStatement.close();
+            connection.close();
+            return true;
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return true;
+        return false;
     }
 
     @Override
-    public boolean excluir(Banda banda) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean excluir(int id) {
+        try {
+            Statement createStatement = this.connection.createStatement();
+            ResultSet result = createStatement.executeQuery("DELETE CASCADE FROM Banda WHERE id = ?;"+id);
+            createStatement.close();
+            connection.close();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 
     @Override
     public boolean atualizar(Banda banda) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            PreparedStatement createStatement = this.connection.prepareStatement("UPDATE Banda SET localDeorigem = ?, nomeFantasia = ? WHERE id = ?");
+            createStatement.setString(1, banda.getLocalOrigem());
+            createStatement.setString(2, banda.getNomeFantasia());
+            createStatement.setInt(3, banda.getId());
+            createStatement.executeUpdate();
+            createStatement.close();
+            connection.close();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 
     @Override
@@ -50,7 +84,8 @@ public class BandaImplementationDAOBanco implements BandaInterface{
             Statement createStatement = this.connection.createStatement();
             ResultSet result = createStatement.executeQuery("SELECT * FROM Banda;");
             iterarComBandas(result, lista);
-
+            createStatement.close();
+            connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -73,6 +108,5 @@ public class BandaImplementationDAOBanco implements BandaInterface{
 
         return new Banda(id, localDeOrigem, nomeFantasia);
 
-    }
-    
+    }   
 }

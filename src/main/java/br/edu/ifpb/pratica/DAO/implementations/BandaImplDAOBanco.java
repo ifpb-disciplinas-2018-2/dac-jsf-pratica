@@ -16,12 +16,12 @@ import java.util.List;
  *
  * @author fernanda
  */
-public class BandaImplementationDAOBanco implements BandaInterface{
+public class BandaImplDAOBanco implements BandaInterface{
     
     private DataBase postgres;
     private Connection connection;
 
-    public BandaImplementationDAOBanco(DataBase postgres, Connection connection) 
+    public BandaImplDAOBanco(DataBase postgres, Connection connection) 
             throws ClassNotFoundException, SQLException {
         this.postgres = new DataBase();
         this.connection = ConFactory.getConnection(postgres.getUrl(), 

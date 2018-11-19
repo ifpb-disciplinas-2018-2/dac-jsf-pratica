@@ -1,7 +1,7 @@
 package br.edu.ifpb.pratica.DAO.factory;
 
 import br.edu.ifpb.pratica.DAO.interfaces.FactoryDAO;
-import br.edu.ifpb.pratica.DAO.implementations.BandaImplementationDao;
+import br.edu.ifpb.pratica.DAO.implementations.BandaImplDao;
 
 import java.sql.SQLException;
 
@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class FactoryBD implements FactoryDAO{
      @Override
-    public BandaImplementationDao getDaoBanda() {
-        return new BandaImplementationDao();
+    public BandaImplDao getDaoBanda() {
+        return new BandaImplDao();
     }
 }

@@ -25,6 +25,10 @@ public class Integrante {
         this.dataDeNascimento = dataDeNascimento;
     }
 
+    public Integrante(int id, String nome, LocalDate dataDeNascimento, CPF cpf) {
+        this.cpf = cpf;
+    }
+
     public int getId() {
         return id;
     }

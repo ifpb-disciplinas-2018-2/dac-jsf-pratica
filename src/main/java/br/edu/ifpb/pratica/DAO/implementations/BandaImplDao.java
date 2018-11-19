@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author fernanda
  */
-public class BandaImplementationDao implements BandaInterface{
+public class BandaImplDao implements BandaInterface{
     
     private List<Banda> dao = new ArrayList<>();
 

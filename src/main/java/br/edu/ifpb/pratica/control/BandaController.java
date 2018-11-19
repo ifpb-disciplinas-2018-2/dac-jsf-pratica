@@ -4,6 +4,7 @@ import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 import br.edu.ifpb.pratica.model.Banda;
 import br.edu.ifpb.pratica.manager.GerenciadorBanda;
+import java.util.List;
 
 /**
  *
@@ -29,6 +30,16 @@ public class BandaController {
         this.banda = banda;
     }
     
+    public List<Banda> listar(){
+        return null;
+    }
     
+    public String salvar(){
+        return null;
+    }
+    
+    public String atualizar(){
+        return null;
+    }
     
 }

@@ -4,6 +4,7 @@ import br.edu.ifpb.pratica.manager.GerenciadorIntegrante;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 import br.edu.ifpb.pratica.model.Integrante;
+import java.util.List;
 /**
  *
  * @author murillo
@@ -26,6 +27,18 @@ public class IntegranteController {
 
     public void setIntegrante(Integrante integrante) {
         this.integrante = integrante;
+    }
+        
+    public List<Integrante> listar(){
+        return null;
+    }
+    
+    public String salvar(){
+        return null;
+    }
+    
+    public String atualizar(){
+        return null;
     }
     
 }

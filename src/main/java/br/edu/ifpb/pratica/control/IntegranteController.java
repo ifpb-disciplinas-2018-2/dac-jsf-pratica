@@ -30,14 +30,30 @@ public class IntegranteController {
     }
         
     public List<Integrante> listar(){
+        
+        this.gerenciador.listar();
+        
         return null;
     }
     
     public String salvar(){
+        
+        this.gerenciador.salvar(integrante);
+        
         return null;
     }
     
     public String atualizar(){
+        
+        this.gerenciador.atualizar(integrante);
+        
+        return null;
+    }
+    
+    public String deletar(){
+        
+        this.gerenciador.deletar(integrante);
+        
         return null;
     }
     

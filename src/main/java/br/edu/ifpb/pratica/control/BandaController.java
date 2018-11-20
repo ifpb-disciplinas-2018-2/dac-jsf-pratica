@@ -44,4 +44,10 @@ public class BandaController {
         return null;
     }
     
+    public String deletar(){
+        
+        this.gerenciador.excluirBanda(banda.getId());
+        return null;
+    }
+    
 }

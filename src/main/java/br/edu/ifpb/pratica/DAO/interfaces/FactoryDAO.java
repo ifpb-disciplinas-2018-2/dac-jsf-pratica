@@ -8,4 +8,5 @@ import br.edu.ifpb.pratica.DAO.implementations.BandaImplDao;
  */
 public interface FactoryDAO {
     BandaImplDao getDaoBanda();
+    public IntegrantesInterface criaDaoIntegrante();
 }

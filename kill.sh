@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-docker kill app
-docker rm app
-docker rmi atividade/app
-docker kill banco
-docker rm banco
-docker rmi atividade/banco
+sudo docker kill app
+sudo docker rm app
+sudo docker rmi atividade/app
+sudo docker kill banco
+sudo docker rm banco
+sudo docker rmi atividade/banco
 
 # docker rmi -f $(docker image ls atividade/* -q)
 # docker kill $(docker container ls -a -q)

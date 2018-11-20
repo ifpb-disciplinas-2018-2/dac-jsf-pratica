@@ -2,4 +2,4 @@
 #FROM payara/server-web
 
 FROM payara/micro
-COPY /target/dac-jsf-atividade.war ${DEPLOY_DIR}
+COPY /target/docker-jsf-atividade.war ${DEPLOY_DIR}

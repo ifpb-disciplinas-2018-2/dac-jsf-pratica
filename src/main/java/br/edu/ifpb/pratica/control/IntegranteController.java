@@ -1,26 +1,23 @@
 package br.edu.ifpb.pratica.control;
 
 import br.edu.ifpb.pratica.manager.GerenciadorIntegrante;
-import javax.faces.bean.SessionScoped;
+
 import javax.inject.Named;
 import br.edu.ifpb.pratica.model.Integrante;
+import java.io.Serializable;
 import java.util.List;
+import javax.enterprise.context.SessionScoped;
 /**
  *
  * @author murillo
  */
 @Named
 @SessionScoped
-public class IntegranteController {
+public class IntegranteController implements Serializable {
     
-    Integrante integrante;
-    GerenciadorIntegrante gerenciador;
-
-    public IntegranteController() {
-        integrante = new Integrante(); 
-        gerenciador = new GerenciadorIntegrante();
-    }
-
+    Integrante integrante = new Integrante(); 
+    GerenciadorIntegrante gerenciador = new GerenciadorIntegrante();
+    
     public Integrante getIntegrante() {
         return integrante;
     }

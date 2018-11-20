@@ -1,10 +1,12 @@
 package br.edu.ifpb.pratica.control;
 
-import javax.faces.bean.SessionScoped;
+
 import javax.inject.Named;
 import br.edu.ifpb.pratica.model.Banda;
 import br.edu.ifpb.pratica.manager.GerenciadorBanda;
+import java.io.Serializable;
 import java.util.List;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
@@ -12,15 +14,10 @@ import java.util.List;
  */
 @Named
 @SessionScoped
-public class BandaController {
+public class BandaController implements Serializable{
     
-    Banda banda;
-    GerenciadorBanda gerenciador;
-    
-    public BandaController() {
-        banda = new Banda();
-        gerenciador = new GerenciadorBanda();
-    }
+    Banda banda = new Banda();
+    GerenciadorBanda gerenciador = new GerenciadorBanda();
 
     public Banda getBanda() {
         return banda;

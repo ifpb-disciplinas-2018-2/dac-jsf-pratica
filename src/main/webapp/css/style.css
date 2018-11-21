@@ -1,4 +1,5 @@
 .none{display:none}
+.block{display:block}
 
 .hero.background{
     position: absolute;
@@ -30,6 +31,10 @@
 
 .jquery-modal{
     z-index: 50;
+}
+
+div.tabs li.is-active {
+    border-bottom: 1px solid white;
 }
 
 .m-1{
